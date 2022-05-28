@@ -1,0 +1,21 @@
+require_relative 'brave'
+require_relative 'monster'
+
+brave = Brave.new(name: 'ゆうしゃ', hp: 238, offense: 203, defense: 129)
+# monster = Monster.new(name: 'アークデーモン', hp: 210, offense: 140, defense: 80)
+monster = Monster.new(name: 'シドー', hp: 250, offense: 255, defense: 255)
+
+monster.encounter
+
+while brave.hp > 0 && monster.hp > 0
+  brave.attack(monster)
+  monster.attack(brave) if monster.hp > 0
+  puts <<~TEXT
+    *=*=*=*=*=*=*=*=*=*=*
+    【#{brave.name}】HP: #{brave.hp}
+    【#{monster.name}】HP: #{monster.hp}
+    *=*=*=*=*=*=*=*=*=*=*
+  TEXT
+  puts "#{monster.name} をやっつけた！" if monster.hp <= 0
+  puts "#{brave.name} はしんでしまった！" if brave.hp <= 0
+end
