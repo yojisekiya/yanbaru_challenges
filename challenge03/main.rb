@@ -16,6 +16,7 @@ while brave.hp > 0 && monster.hp > 0
     【#{monster.name}】HP: #{monster.hp}
     *=*=*=*=*=*=*=*=*=*=*
   TEXT
-  puts "#{monster.name} をやっつけた！" if monster.hp <= 0
-  puts "#{brave.name} はしんでしまった！" if brave.hp <= 0
 end
+
+puts "#{monster.name} をやっつけた！" if monster.hp <= 0
+puts "#{brave.name} はしんでしまった！" if brave.hp <= 0
