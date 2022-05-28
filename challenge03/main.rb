@@ -18,5 +18,8 @@ while brave.hp > 0 && monster.hp > 0
   TEXT
 end
 
-puts "#{monster.name} をやっつけた！" if monster.hp <= 0
-puts "#{brave.name} はしんでしまった！" if brave.hp <= 0
+if monster.hp <= 0
+  puts "#{monster.name} をやっつけた！"
+else
+  puts "#{brave.name} はしんでしまった！"
+end
